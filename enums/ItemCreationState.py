@@ -2,6 +2,7 @@ from enum import IntEnum
 
 
 class ItemCreationState(IntEnum):
+    PICK_ITEM_TYPE = 0,
     IS_ITEM_CRAFTED_QUESTION = 1,
     PICK_MOD_GROUP = 2,
     PICK_MODIFIER = 3,
@@ -9,7 +10,7 @@ class ItemCreationState(IntEnum):
     CALCULATE = 5
 
     def get_previous_step(self):
-        if self.value > 1:
+        if self.value > 0:
             return ItemCreationState(self.value - 1)
         return self
     

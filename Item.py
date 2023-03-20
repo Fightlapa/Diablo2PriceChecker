@@ -1,11 +1,14 @@
+from enum import Enum
 from typing import Dict, Optional
 import os
 
 from Modifier import Modifier as Modifier
+from enums.ItemType import ItemType as ItemType
 
 
 class Item():
     modifiers: Dict[Modifier, int] = {}
+    item_type: ItemType
     crafted: Optional[bool] = None
 
     def set_crafted(self, value: bool):
@@ -19,6 +22,9 @@ class Item():
     
     def is_crafted(self) -> bool:
         return self.crafted
+    
+    def set_item_type(self, item_type: ItemType):
+        self.item_type = item_type
 
     def __str__(self):
         print_str = ""

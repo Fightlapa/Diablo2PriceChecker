@@ -73,4 +73,4 @@ def get_selection_input() -> bytes:
 
 
 def get_yes_no_input() -> bytes:
-    return get_casual_input([K_Y, K_N])
+    return get_casual_input([K_Y, K_N, K_B])
