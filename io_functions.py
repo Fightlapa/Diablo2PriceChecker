@@ -19,13 +19,13 @@ if "windows" in platform.system().lower():
 else:
     def clear_console():
         os.system('clear')
-    K_RIGHT = b'[C'
-    K_LEFT  = b'[D'
-    K_UP  = b'[A'
-    K_DOWN  = b'[B'
-    K_ENTER = b'???'
-    K_Q     = b'???'
-    K_B     = b'???'
+    K_RIGHT = b'C'
+    K_LEFT  = b'D'
+    K_UP  = b'A'
+    K_DOWN  = b'B'
+    K_ENTER = b'\r'
+    K_Q     = b'q'
+    K_B     = b'b'
 
 
 def read_key():
@@ -45,8 +45,15 @@ def read_key():
 
         # Read arrow keys correctly
         def getKey():
-            firstChar = getch()
-            return firstChar
+            char_to_return = ''
+            first_char = getch()
+            while first_char == '\x1b':
+                first_char = getch()
+            if first_char == '[':
+                char_to_return = getch()
+            else:
+                char_to_return = first_char
+            return char_to_return.encode()
 
     except ImportError:
         # Non-POSIX: Return msvcrt's (Windows') getch
