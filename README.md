@@ -1,8 +1,15 @@
-# Diablo2PriceChecker
-Python script which prints estimation of value of Diablo2 rare items
+# Diablo 2 price checker
+### What it does
+It prints estimation of value of Diablo2 rare items (currently amulets, rings and circlets)
+
+### How to use it
+It requires Python 3.7+
 
 It doesn't require additional python packages to be installed.
 
+It should work properly on MacOS, Windows, Linux
+
+## Calculations
 To calculate points for single modifier, it uses (almost) pure square function after mapping modifier values to be in range [0,1].
 
 
