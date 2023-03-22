@@ -4,6 +4,8 @@ Python script which prints estimation of value of Diablo2 rare items
 It doesn't require additional python packages to be installed.
 
 To calculate points for single modifier, it uses (almost) pure square function after mapping modifier values to be in range [0,1].
+
+
 ![alt text](https://i.stack.imgur.com/wa4iF.png)
 
 So as an example. Assuming modifier can have values [10, 30] and item has value 28. Out of range of 20 values (21 exactly as it's inclusive, but it doesn't matter much in an example), it's 18.
